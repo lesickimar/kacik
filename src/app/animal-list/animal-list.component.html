@@ -1,0 +1,7 @@
+<mat-grid-list cols="4" rowHeight="500px">
+  <mat-grid-tile *ngFor="let animal of AnimalList">
+      <app-animal-box      
+      [animal]="animal"
+      ></app-animal-box>
+  </mat-grid-tile>
+</mat-grid-list>
