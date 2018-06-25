@@ -11,7 +11,10 @@ export class AnimalListComponent implements OnInit {
   {name: 'Mista', description: 'Mista pociąg', breed: 'Menda', photo: './assets/test1.jpg'},
   {name: 'Test', description: 'Testujemy pociąg', breed: 'Test', photo: './assets/test2.jpg'},
   {name: 'Kamikadze', description: 'wooho', breed: 'Kam', photo: './assets/test3.jpg'},
-  {name: 'Kamikadze', description: 'wooho', breed: 'Kam', photo: './assets/test4.jpg'}
+  {name: 'Kamikadze', description: 'wooho', breed: 'Kam', photo: './assets/test4.jpg'},
+  {name: 'Test', description: 'Testujemy pociąg', breed: 'Test', photo: './assets/lala.jpg'},
+  {name: 'Kamikadze', description: 'wooho', breed: 'Kam', photo: './assets/lala.jpg'},
+  {name: 'Kamikadze', description: 'wooho', breed: 'Kam', photo: './assets/lala.jpg'}
 ];
   constructor() { }
 
