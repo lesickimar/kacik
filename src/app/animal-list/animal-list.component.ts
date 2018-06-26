@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ObservableMedia } from '@angular/flex-layout';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-animal-list',
@@ -16,9 +19,21 @@ export class AnimalListComponent implements OnInit {
   {name: 'Kamikadze', description: 'wooho', breed: 'Kam', photo: './assets/lala.jpg'},
   {name: 'Kamikadze', description: 'wooho', breed: 'Kam', photo: './assets/lala.jpg'}
 ];
-  constructor() { }
+
+  cols = 2;
+
+  constructor(private observableMedia: ObservableMedia) { }
 
   ngOnInit() {
+    const breakpoints: { [ size: string ]: number } = {
+    ['xs'] : 1,
+    ['sm'] : 2,
+    ['md'] : 3,
+    ['lg'] : 3,
+    ['xl'] : 4
+    };
+
+    this.observableMedia.subscribe(x => this.cols = breakpoints[x.mqAlias]);
   }
 
 }

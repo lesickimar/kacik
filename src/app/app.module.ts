@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { AnimalBoxComponent } from './animal-box/animal-box.component';
 import { AnimalListComponent } from './animal-list/animal-list.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 @NgModule({
   declarations: [
@@ -17,6 +19,7 @@ import { AnimalListComponent } from './animal-list/animal-list.component';
     BrowserModule,
     BrowserAnimationsModule,
     CustomMaterialModule,
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
