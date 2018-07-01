@@ -7,13 +7,16 @@ import { AppComponent } from './app.component';
 import { AnimalBoxComponent } from './animal-box/animal-box.component';
 import { AnimalListComponent } from './animal-list/animal-list.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { ListService } from './services/list/list.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AnimalBoxComponent,
-    AnimalListComponent
+    AnimalListComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CustomMaterialModule,
     FlexLayoutModule,
   ],
-  providers: [],
+  providers: [ListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
