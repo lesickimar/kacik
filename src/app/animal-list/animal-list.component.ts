@@ -3,7 +3,6 @@ import { ObservableMedia } from '@angular/flex-layout';
 import { Observable } from 'rxjs';
 import { ListService } from '../services/list/list.service';
 import { Animal } from '../temporaryListClass';
-import { MAT_CHIPS_DEFAULT_OPTIONS } from '@angular/material';
 
 
 @Component({
@@ -19,6 +18,7 @@ export class AnimalListComponent implements OnInit {
   nextArrow = true;
 
   cols = 2;
+  fonts = '150px';
 
   constructor(private observableMedia: ObservableMedia, private listService: ListService) {
     // this.listService.getAnimalListObs().subscribe((animals: Array<Animal>) => {
@@ -28,15 +28,24 @@ export class AnimalListComponent implements OnInit {
   }
 
   ngOnInit() {
-    const breakpoints: { [size: string]: number } = {
+    const breakpointsCols: { [size: string]: number } = {
       ['xs']: 1,
       ['sm']: 2,
-      ['md']: 3,
+      ['md']: 2,
       ['lg']: 3,
       ['xl']: 4
     };
 
-    this.observableMedia.subscribe(x => this.cols = breakpoints[x.mqAlias]);
+    const breakpointsFonts: { [size: string]: string } = {
+      ['xs']: '20px',
+      ['sm']: '50px',
+      ['md']: '80px',
+      ['lg']: '100px',
+      ['xl']: '150px'
+    };
+
+    this.observableMedia.subscribe(x => this.cols = breakpointsCols[x.mqAlias]);
+    this.observableMedia.subscribe(x => this.fonts = breakpointsFonts[x.mqAlias]);
   }
 
   takeListFromService() {
@@ -67,6 +76,10 @@ export class AnimalListComponent implements OnInit {
       this.previousArrow = false;
     }
 
+  }
+
+  fontSize() {
+    return this.fonts;
   }
 
 }
