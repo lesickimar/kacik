@@ -18,8 +18,8 @@ export class AnimalListComponent implements OnInit {
   nextArrow = true;
 
   cols = 2;
-  fonts = '150px';
-
+  fonts = '110px';
+  arrow = 'arrowDesktop';
   constructor(private observableMedia: ObservableMedia, private listService: ListService) {
     // this.listService.getAnimalListObs().subscribe((animals: Array<Animal>) => {
     //   this.AnimalList = animals.slice(this.listNumber, this.listNumber + 4);
@@ -41,11 +41,20 @@ export class AnimalListComponent implements OnInit {
       ['sm']: '50px',
       ['md']: '80px',
       ['lg']: '100px',
-      ['xl']: '150px'
+      ['xl']: '110px'
+    };
+
+    const breakpointsArrow: { [size: string]: string } = {
+      ['xs']: 'arrowMobile',
+      ['sm']: 'arrowMobile',
+      ['md']: 'arrowMobile',
+      ['lg']: 'arrowDesktop',
+      ['xl']: 'arrowDesktop'
     };
 
     this.observableMedia.subscribe(x => this.cols = breakpointsCols[x.mqAlias]);
     this.observableMedia.subscribe(x => this.fonts = breakpointsFonts[x.mqAlias]);
+    this.observableMedia.subscribe(x => this.arrow = breakpointsArrow[x.mqAlias]);
   }
 
   takeListFromService() {
@@ -76,10 +85,6 @@ export class AnimalListComponent implements OnInit {
       this.previousArrow = false;
     }
 
-  }
-
-  fontSize() {
-    return this.fonts;
   }
 
 }

@@ -14,7 +14,7 @@
   </mat-grid-list>
 </div>
 <div class="col-md-1">
-  <button mat-button (click)="nextPage()" *ngIf="nextArrow">
+  <button [ngClass]="arrow" mat-button (click)="nextPage()" *ngIf="nextArrow">
     <div class="material-icons" [ngStyle]="{'font-size': [fonts]}" style="color: rgb(75, 75, 225)" (click)="nextPage()" *ngIf="nextArrow">chevron_right</div>
     <!-- <img src="./assets/icons/arrow.png" class="img-thumbnail"> -->
   </button>

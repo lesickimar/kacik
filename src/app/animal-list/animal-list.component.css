@@ -1,0 +1,17 @@
+#arrow{
+position: relative;
+top: 120px;
+left: 2px;
+}
+
+
+.arrowDesktop{
+  position: relative;
+  top: 150px;
+  right: 15px;
+}
+.arrowMobile{
+  position: relative;
+  top: 250px;
+  left: 2px;
+}
