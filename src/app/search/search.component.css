@@ -1,0 +1,15 @@
+#mainDiv {
+  height: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+#cityField{
+  display: flex;
+  flex-direction: column;
+}
+
+#cityField > * {
+  width: 200px;
+}

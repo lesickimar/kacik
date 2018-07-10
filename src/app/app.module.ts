@@ -9,6 +9,7 @@ import { AnimalListComponent } from './animal-list/animal-list.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ListService } from './services/list/list.service';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ListService } from './services/list/list.service';
     AppComponent,
     AnimalBoxComponent,
     AnimalListComponent,
-    NavBarComponent
+    NavBarComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
