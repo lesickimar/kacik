@@ -2,8 +2,9 @@
   crossorigin="anonymous">
 
 <div class="col-md-1">
-  <button mat-raised-button (click)="previousPage()" *ngIf="previousArrow">
-    <img src="./assets/icons/arrow.png" class="img-thumbnail">
+  <button [ngClass]="arrow" mat-button (click)="previousPage()" *ngIf="previousArrow">
+    <div class="material-icons" [ngStyle]="{'font-size': [fonts]}" style="color: rgb(75, 75, 225); left: 25px">chevron_left</div>
+    <!-- <img src="./assets/icons/arrow.png" class="img-thumbnail"> -->
   </button>
 </div>
 <div class="col-md-10">
@@ -15,7 +16,7 @@
 </div>
 <div class="col-md-1">
   <button [ngClass]="arrow" mat-button (click)="nextPage()" *ngIf="nextArrow">
-    <div class="material-icons" [ngStyle]="{'font-size': [fonts]}" style="color: rgb(75, 75, 225)" (click)="nextPage()" *ngIf="nextArrow">chevron_right</div>
+    <div class="material-icons" [ngStyle]="{'font-size': [fonts]}" style="color: rgb(75, 75, 225)">chevron_right</div>
     <!-- <img src="./assets/icons/arrow.png" class="img-thumbnail"> -->
   </button>
 </div>
