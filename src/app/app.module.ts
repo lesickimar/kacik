@@ -10,6 +10,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ListService } from './services/list/list.service';
 import { SearchComponent } from './search/search.component';
+import { TruncatePipe } from './pipes/truncate.pipe';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { SearchComponent } from './search/search.component';
     AnimalBoxComponent,
     AnimalListComponent,
     NavBarComponent,
-    SearchComponent
+    SearchComponent,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,

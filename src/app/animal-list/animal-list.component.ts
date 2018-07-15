@@ -20,10 +20,16 @@ export class AnimalListComponent implements OnInit {
   cols = 2;
   fonts = '110px';
   arrow = 'arrowDesktop';
+  mobile = false;
+  // breakpointsMobile deciding if it's desktop or mobile version(if mobile version then only 1 picture will appear)
+  breakpointsMobile: { [size: string]: boolean } = {
+    ['xs']: true,
+    ['sm']: false,
+    ['md']: false,
+    ['lg']: false,
+    ['xl']: false,
+  };
   constructor(private observableMedia: ObservableMedia, private listService: ListService) {
-    // this.listService.getAnimalListObs().subscribe((animals: Array<Animal>) => {
-    //   this.AnimalList = animals.slice(this.listNumber, this.listNumber + 4);
-    // });
     this.takeListFromService();
   }
 
@@ -58,12 +64,24 @@ export class AnimalListComponent implements OnInit {
   }
 
   takeListFromService() {
+    this.observableMedia.subscribe(x => this.mobile = this.breakpointsMobile[x.mqAlias]);
+
     this.listService.getAnimalListObs().subscribe((animals: Array<Animal>) => {
       if (animals.length <= this.listNumber + 4) {
         this.nextArrow = false;
         console.log('thats ALL BICZ' + this.listNumber + 4);
       }
-      this.AnimalList = animals.slice(this.listNumber, this.listNumber + 4);
+
+      if (this.mobile === true) {
+        this.AnimalList = animals.slice(this.listNumber, this.listNumber + 1);
+        this.nextArrow = false;
+        this.previousArrow = false;
+        console.log('WYYY');
+      }
+      // tslint:disable-next-line:one-line
+      else {
+        this.AnimalList = animals.slice(this.listNumber, this.listNumber + 4);
+      }
     });
   }
 

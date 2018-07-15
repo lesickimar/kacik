@@ -6,7 +6,7 @@
   <img mat-card-image class="img" src={{animal.photo}} alt={{animal.name}}> 
   <mat-card-content>
     <p>
-      {{animal.description}}     
+      {{animal.description | truncate:[80]}}     
     </p>
   </mat-card-content>
   <mat-card-actions>
