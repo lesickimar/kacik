@@ -1,11 +1,18 @@
 #cityDiv {
-  height: 15em;
+  height: 4em;
   display: flex;
   align-items: center;
   justify-content: center
 }
 #advencedDiv {
-  height: -10em;
+  height: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+#searchDiv {
+  height: 2em;
   display: flex;
   align-items: center;
   justify-content: center
@@ -17,4 +24,42 @@
 
 #cityField > * {
   width: 200px;
+}
+
+
+
+@media (min-width: 768px) {
+
+  .titleDiv {
+    height: 10em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 20px;
+  }
+
+  #titleText{
+    font-family: 'Oswald';  
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .titleDiv {
+    height: 10em;
+    display: flex;
+    align-items: center;
+    left: 200px;
+  }
+
+  #titleText{
+    font-family: 'Oswald';  
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+  }
+
 }
