@@ -77,9 +77,7 @@ export class AnimalListComponent implements OnInit {
         this.nextArrow = false;
         this.previousArrow = false;
         console.log('WYYY');
-      }
-      // tslint:disable-next-line:one-line
-      else {
+      } else {
         this.AnimalList = animals.slice(this.listNumber, this.listNumber + 4);
       }
     });
