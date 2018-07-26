@@ -51,7 +51,7 @@ export class AnimalListComponent implements OnInit {
     };
 
     const breakpointsArrow: { [size: string]: string } = {
-      ['xs']: 'arrowMobile',
+      // ['xs']: 'arrowMobile',
       ['sm']: 'arrowMobile',
       ['md']: 'arrowMobile',
       ['lg']: 'arrowDesktop',
@@ -100,7 +100,11 @@ export class AnimalListComponent implements OnInit {
     if (this.listNumber === 0) {
       this.previousArrow = false;
     }
+  }
 
+  mobileNextAnimal(addNumb: number) {
+    this.listNumber++;
+    this.takeListFromService();
   }
 
 }

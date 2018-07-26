@@ -11,6 +11,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ListService } from './services/list/list.service';
 import { SearchComponent } from './search/search.component';
 import { TruncatePipe } from './pipes/truncate.pipe';
+import { HammerCardComponent } from './hammer-card/hammer-card.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { TruncatePipe } from './pipes/truncate.pipe';
     AnimalListComponent,
     NavBarComponent,
     SearchComponent,
-    TruncatePipe
+    TruncatePipe,
+    HammerCardComponent
   ],
   imports: [
     BrowserModule,

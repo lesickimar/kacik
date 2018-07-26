@@ -4,19 +4,17 @@
 <div class="col-md-1">
   <button [ngClass]="arrow" mat-button (click)="previousPage()" *ngIf="previousArrow">
     <div class="material-icons" [ngStyle]="{'font-size': [fonts]}" style="color: rgb(75, 75, 225); left: 25px">chevron_left</div>
-    <!-- <img src="./assets/icons/arrow.png" class="img-thumbnail"> -->
   </button>
 </div>
 <div class="col-md-10">
   <mat-grid-list [cols]="cols" rowHeight="550px">
     <mat-grid-tile *ngFor="let animal of AnimalList">
-      <app-animal-box [animal]="animal"></app-animal-box>
+      <app-animal-box mobileNextAnimal="animalBoxNextMobile($event)" [animal]="animal"></app-animal-box>
     </mat-grid-tile>
   </mat-grid-list>
 </div>
 <div class="col-md-1">
   <button [ngClass]="arrow" mat-button (click)="nextPage()" *ngIf="nextArrow">
     <div class="material-icons" [ngStyle]="{'font-size': [fonts]}" style="color: rgb(75, 75, 225)">chevron_right</div>
-    <!-- <img src="./assets/icons/arrow.png" class="img-thumbnail"> -->
   </button>
 </div>
