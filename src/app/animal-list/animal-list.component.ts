@@ -102,7 +102,7 @@ export class AnimalListComponent implements OnInit {
     }
   }
 
-  mobileNextAnimal(addNumb: number) {
+  mobileNextAnimal() {
     this.listNumber++;
     this.takeListFromService();
   }

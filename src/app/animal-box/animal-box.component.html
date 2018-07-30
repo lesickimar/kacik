@@ -1,6 +1,7 @@
 <mat-card class="example-card" 
   [@cardAnimator]="animationState" 
   (@cardAnimator.done)="resetAnimationState()"
+  (@cardAnimator.done)="animalBoxNextMobileMethod()"
   (swipeleft)="startAnimation('slideOutLeft')">
   <mat-card-header>
     <mat-card-title>{{animal.name}}</mat-card-title>

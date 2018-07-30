@@ -9,7 +9,7 @@
 <div class="col-md-10">
   <mat-grid-list [cols]="cols" rowHeight="550px">
     <mat-grid-tile *ngFor="let animal of AnimalList">
-      <app-animal-box mobileNextAnimal="animalBoxNextMobile($event)" [animal]="animal"></app-animal-box>
+      <app-animal-box (animalBoxNextMobile)="mobileNextAnimal($event)" [animal]="animal"></app-animal-box>
     </mat-grid-tile>
   </mat-grid-list>
 </div>

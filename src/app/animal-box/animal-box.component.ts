@@ -1,7 +1,7 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { trigger, keyframes, animate, transition } from '@angular/animations';
 import * as kf from '../hammer-card/keyframes';
-import { EventEmitter } from 'events';
+// import { EventEmitter } from 'events';
 
 @Component({
   selector: 'app-animal-box',
@@ -18,14 +18,12 @@ export class AnimalBoxComponent implements OnInit {
   constructor() { }
   animationState: string;
   newNumb: number;
-  @Output() animalBoxNextMobile = new EventEmitter<{addNumb: number}>(); //WHYYY
+  @Output() animalBoxNextMobile = new EventEmitter<any>();
 
   ngOnInit() {
   }
-  startAnimation(state) {
+  startAnimation(state) {//ustawić gdzie metode animalboxnextmobilemethod, tak aby nie przelatywało na szybko. Jeśli ustawie w startAnimation tą metode to działa ale ze szybko(moze odliczac czas?)
     console.log(state);
-    this.animalBoxNextMobileMethod();
-    this.animalBoxNextMobile.emit({addNumb: this.newNumb});
     if (!this.animationState) {
       this.animationState = state;
     }
@@ -33,10 +31,13 @@ export class AnimalBoxComponent implements OnInit {
 
   resetAnimationState() {
     this.animationState = '';
+    this.animalBoxNextMobileMethod();
   }
 
   animalBoxNextMobileMethod() {
-    this.animalBoxNextMobile.emit({addNumb: this.newNumb});
+    if (this.animationState) {
+      this.animalBoxNextMobile.emit();
+    }
   }
 
 
