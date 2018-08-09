@@ -27,7 +27,6 @@
 }
 
 
-
 @media (min-width: 768px) {
 
   .titleDiv {
@@ -38,7 +37,7 @@
   }
 
   #titleText{
-    font-family: 'Oswald';  
+    font-family: 'Oswald';
     font-size: 30px;
     font-weight: bolder;
     text-align: center;
@@ -54,7 +53,7 @@
   }
 
   #titleText{
-    font-family: 'Oswald';  
+    font-family: 'Oswald';
     font-size: 30px;
     font-weight: bolder;
     text-align: center;
