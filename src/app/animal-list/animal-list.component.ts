@@ -103,7 +103,13 @@ export class AnimalListComponent implements OnInit {
   }
 
   mobileNextAnimal() {
+    debugger;
     this.listNumber++;
+    this.takeListFromService();
+  }
+  mobilePreviousAnimal() {
+    debugger;
+    this.listNumber--;
     this.takeListFromService();
   }
 

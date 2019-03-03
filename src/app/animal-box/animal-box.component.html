@@ -1,9 +1,12 @@
-<mat-card class="example-card" 
-  [@cardAnimator]="animationState" 
+<mat-card class="example-card"
+  [@cardAnimator]="animationState"
   (@cardAnimator.done)="resetAnimationState()"
   [@slideLeft]= "startAnimationNext('slideLeft')"
   (@slideLeft.done)="resetAnimationStateNext()"
-  (swipeleft)="startAnimation('slideOutLeft')">
+  (swipeleft)="startAnimation('slideOutLeft')"
+  [@slideRight]= "startAnimationPrevious('slideRight')"
+  (@slideRight.done)="resetAnimationStateNext()"
+  (swiperight)="startAnimation('slideOutRight')">
   <mat-card-header>
     <mat-card-title>{{animal.name}}</mat-card-title>
     <mat-card-subtitle>{{animal.breed}}</mat-card-subtitle>
